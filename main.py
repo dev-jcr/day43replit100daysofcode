@@ -6,7 +6,6 @@ counter=0
 # def gen():
 c=0
 n=0
-while True:
   if n<3:
     turn=random.randint(1, 100)
     bingo[c][n]=turn
@@ -15,7 +14,6 @@ while True:
       c=+1
       if c==3:
         print(bingo)
-        break
     else:
-      continue
+      pass
     
