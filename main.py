@@ -1,19 +1,27 @@
-import random, pprint
-from prettytable import PrettyTable
-bingo=[["","",""],["","",""],["","",""]]
+# Lists inside lists: 2D lists or tables
 
-counter=0
-# def gen():
-c=0
-n=0
-  if n<3:
-    turn=random.randint(1, 100)
-    bingo[c][n]=turn
-    n+=1
-    if n==3:
-      c=+1
-      if c==3:
-        print(bingo)
-    else:
-      pass
-    
+import random
+from PrettyTable import PrettyTable, ALL
+
+bingo = []
+
+def ran():
+  number = random.randint(1,90)
+  return number
+
+def prettyPrint():
+  for row in bingo:
+    print(row)
+
+numbers = []
+for i in range(8):
+  numbers.append(ran())
+
+numbers.sort()
+
+bingo = [ [ numbers[0], numbers[1], numbers[2]],
+          [ numbers[3], "BINGO", numbers[4] ],
+          [ numbers [5], numbers[6], numbers[7]]
+        ]
+
+prettyPrint()
